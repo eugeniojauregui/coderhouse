@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Posicionamiento</title>
+    <meta charset="utf-8" />
+    <style>
+        .superior {
+            width: 400px;
+            height: 400px;
+            background: orange;
+            position: relative;
+            background: linear-gradient(20deg, #E91E63, #FFEB3B, #FFC107);
+        }
+
+        .inferior {
+            width: 150px;
+            height: 150px;
+            background: blueviolet;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+
+        .dos {
+            background: gray;
+            bottom: 40px;
+            right: 40px;
+            transform: scale(1.1) rotate(45deg) translate(100px);
+            /*animation-name: efecto_alfa;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+            animation-duration: 5s;
+            animation-delay: 0s;*/
+
+        }
+
+        @keyframes efecto_alfa {
+            0% {
+                width: 100px;
+            }
+
+            25% {
+                width: 300px;
+            }
+
+            50% {
+                width: 200px;
+                background-color: red;
+            }
+
+            75% {
+                width: 300px;
+            }
+
+            100% {
+                width: 100px;
+                background-color: green;
+            }
+        }
+
+        .boton {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            animation-name: latido;
+            animation-duration: .5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+
+        @keyframes latido {
+            0% {}
+
+            50% {
+                transform: scale(1.2);
+                opacity: .5;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .album {
+            width: 300px;
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        .album_name {
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            background: rgba(120,120,120,0.5);
+            color: #fff;
+            font-size: 20px;
+            position: absolute;
+            top: 0;
+            opacity: 0;
+            transition: ease all 0.2s;
+            padding-top:40%;
+        }
+        .album:hover .album_name {
+            opacity: 1;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="superior">
+        Superior
+        <div class="inferior">
+            Inferior
+        </div>
+        <div class="inferior dos">
+            Inferior
+        </div>
+    </div>
+    <div class="boton">
+        <img width="100%" src="https://www.freeiconspng.com/uploads/pink-heart-png-12.png" />
+    </div>
+    <div class="album">
+        <img src="img/album.jpg" width="100%" />
+        <div class="album_name">
+            Elephant (2003)
+        </div>
+    </div>
+</body>
+
+</html>
